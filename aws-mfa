@@ -26,7 +26,7 @@ AWS_CREDS_PATH = '%s/.aws/credentials' % (os.path.expanduser('~'),)
 
 
 def main():
-    STS_DEFAULT = 900
+    STS_DEFAULT = 60*60*8
     parser = argparse.ArgumentParser()
     parser.add_argument('--device',
                         required=False,
@@ -38,7 +38,7 @@ def main():
                         help="The duration, in seconds, indicating how long "
                         "the temporary credentials should be valid. The "
                         "minimum is 900 seconds (15 minutes) and the maximum "
-                        "is 3600 seconds (1 hour). This value can also be "
+                        "is 28800 seconds (8 hours). This value can also be "
                         "provided via the environment variable "
                         "'MFA_STS_DURATION'.")
     parser.add_argument('--profile',
